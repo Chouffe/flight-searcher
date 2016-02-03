@@ -54,8 +54,8 @@
                                    (make-heap keyfn compar colls)
                                    (reduce + (map count colls))))
 
-(merge-sorted-collections-by :agony < [[{:agony 1} {:agony 2}] [{:agony 0}] [{:agony 1.5} {:agony 4}] [{:agony 1} {:agony 1.3}]])
-(merge-sorted-collections-by :agony > [[{:agony 2} {:agony 1}] [{:agony 0}] [{:agony 4} {:agony 1.5}] [{:agony 1.3} {:agony 1}]])
+; (merge-sorted-collections-by :agony < [[{:agony 1} {:agony 2}] [{:agony 0}] [{:agony 1.5} {:agony 4}] [{:agony 1} {:agony 1.3}]])
+; (merge-sorted-collections-by :agony > [[{:agony 2} {:agony 1}] [{:agony 0}] [{:agony 4} {:agony 1.5}] [{:agony 1.3} {:agony 1}]])
 
 (defn- merge-two-sorted-coll-aux
   [keyfn compar acc [x1 & xs1 :as coll1] [x2 & xs2 :as coll2]]
@@ -70,15 +70,15 @@
   (merge-two-sorted-coll-aux keyfn compar [] coll1 coll2))
 
 ;; Tests
-(merge-two-sorted-coll-aux :agony < [] [{:agony 1} {:agony 2} {:agony 3}] [{:agony 0} {:agony 4}])
-(merge-two-sorted-coll-aux :agony > [] [{:agony 3} {:agony 2} {:agony 1}] [{:agony 4} {:agony 1}])
+; (merge-two-sorted-coll-aux :agony < [] [{:agony 1} {:agony 2} {:agony 3}] [{:agony 0} {:agony 4}])
+; (merge-two-sorted-coll-aux :agony > [] [{:agony 3} {:agony 2} {:agony 1}] [{:agony 4} {:agony 1}])
 
 (defn merge-sorted-collections-by
   [keyfn compar colls]
   (reduce (partial merge-two-sorted-coll keyfn compar) [] colls))
 
-(merge-sorted-collections-by :agony < [ [{:agony 1} {:agony 2} {:agony 3}] [{:agony 0} {:agony 4}] [{:agony 5} {:agony 6}]])
-(merge-sorted-collections-by :agony > [ [{:agony 3} {:agony 2} {:agony 1}] [{:agony 4} {:agony 0}] [{:agony 6} {:agony 5}]])
+; (merge-sorted-collections-by :agony < [ [{:agony 1} {:agony 2} {:agony 3}] [{:agony 0} {:agony 4}] [{:agony 5} {:agony 6}]])
+; (merge-sorted-collections-by :agony > [ [{:agony 3} {:agony 2} {:agony 1}] [{:agony 4} {:agony 0}] [{:agony 6} {:agony 5}]])
 
 (defmacro benchmark
   "Returns in milliseconds the ellapsed time to compute the code
