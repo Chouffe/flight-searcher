@@ -14,14 +14,18 @@ There is a running version of this code deployed to AWS [here](http://54.208.248
 Clone this repo. Make sure you have installed the requirements.
 Start the python scraper API (Running on port 9000)
 
-> cd hipproblems
-> python setup.py develop
-> python -m searchrunner.scraperapi
+```
+cd hipproblems
+python setup.py develop
+python -m searchrunner.scraperapi
+```
 
 Start the Clojure API (Running on port 8000)
 
-> lein repl
-> (start-server)
+```
+lein repl
+(start-server)
+```
 
 ## Frontend
 
