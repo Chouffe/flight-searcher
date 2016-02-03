@@ -21,6 +21,7 @@
                  [cljs-http "0.1.39"]
                  [org.clojure/data.priority-map "0.0.7"]
                  [org.clojure/clojurescript "1.7.228" :scope "provided"]
+                 [org.clojure/test.check "0.9.0"]
                  [secretary "1.2.3"]
                  [venantius/accountant "0.1.6"
                   :exclusions [org.clojure/tools.reader]]]
