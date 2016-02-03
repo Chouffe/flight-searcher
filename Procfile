@@ -1,1 +1,1 @@
-web: java $JVM_OPTS -cp target/template.jar clojure.main -m template.server
+web: cd hipproblems; python setup.py develop; python -m searchrunner.scraperapi_test
