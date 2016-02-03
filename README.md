@@ -29,6 +29,7 @@ lein repl
 
 ## Frontend
 
+[Click here to see a demo](http://54.208.248.245:8000/)
 The small frontend is built with ClojureScript (Clojure syntax that compiles down to javascript), Bootstrap, and React.
 Click on the Search button and that should make an API call to the backend and display it in a table.
 
